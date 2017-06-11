@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  /*
  *
  * @author Ahmad AbdUl-Mageed Othman
@@ -20,3 +21,6 @@
  *
  * 
  */
+=======
+# coursera.m1
+>>>>>>> a9bb1503658815c3da1114c4ce80ea1478635ee0
