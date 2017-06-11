@@ -38,32 +38,20 @@ void main() {
                                     201,   6,  12,  60,   8,   2,   5,  67,
                                       7,  87, 250, 230,  99,   3, 100,  90};
 
-	/* Other Variable Declarations Go Here */
-
-	unsigned char min = find_minimum( &test , SIZE);
-
-	unsigned char max = find_maximum( &test , SIZE);
-
-	short mean = find_mean( &test , SIZE);
-
-	unsigned char median = find_median ( &test, SIZE);
-
-
-
 
 	/* Statistics and Printing Functions Go Here */
 
 	printf("The array before sorting\n\n");
 
-	print_array( &test , SIZE);
-
-	print_statistics( min , max , mean , median);
+	print_array( &test[0] , SIZE);
 
 	printf("\nThe array after sorting\n\n");
 
-        sort_array( &test , SIZE);
+        sort_array( &test[0] , SIZE);
 
-	print_array( &test , SIZE);
+	print_array( &test[0] , SIZE);
+
+	print_statistics ( &test[0] , SIZE);
 
 }
 
@@ -82,9 +70,13 @@ void print_array(unsigned char *s , unsigned int len){
 	printf("\n");
 }
 
-void print_statistics(unsigned char min , unsigned char max , short mean , unsigned char median){
+void print_statistics(unsigned char *s , unsigned int len){
 
-	printf("The minumum value is: %d , the maximum value is : %d \n the mean value is : %d , the median value is : %d \n \n", min, max, mean, median);
+	unsigned char max = find_maximum ( &*s , len);
+	unsigned char min = find_minimum ( &*s , len);
+	unsigned char mean = find_mean( &*s , len);
+	unsigned char median = find_median ( &*s , len);
+	printf(" the maximum member is: %d, the minimum member is: %d, \nthe mean value is: %d, the median member is: %d\n", max, min, mean, median);
 
 }
 
@@ -96,7 +88,7 @@ unsigned char find_median(unsigned char *s , unsigned int len){
 
 	else
 
-		return *(s+(len/2));
+		return (*(s+(len/2))+*(s+len/2 +1))/2;
 }
 
 short find_mean(unsigned char *s , unsigned int len){

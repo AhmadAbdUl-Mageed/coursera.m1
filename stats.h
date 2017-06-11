@@ -24,19 +24,16 @@
 #define __STATS_H__
 
 
-void print_statistics(unsigned char min , unsigned char max , short mean , unsigned char median);
+void print_statistics( unsigned char *s , unsigned int len);
 /**
  * @brief <printing statistics order of an unsigned 1-byte character>
  *
- * <printing statistics by passing the minimum value of your array
- * on the first digit , the maximum value on the second digit, the
- * mean value of your array on the third value , and the median
- * member on your array on the fourth digit>
+ * <printing statistics by passing the address of your array and the
+ * length of your array this function will prints the statistics of
+ * your array >
  *
- * @param <min> <unsigned character variable - the minimum value of your array>
- * @param <max> <unsigned character variable - the maximum value of your array>
- * @param <mean> <unsigned character variable - the mean value of your array>
- * @param <median> <unsigned cahracter variable- the median element on your array>
+ * @param <*s> <unsigned character pointer to the address of your array>
+ * @param <len> <unsigned 4-byte integer variable - the length of your array>
  *
  * @return <nothing>
 */
